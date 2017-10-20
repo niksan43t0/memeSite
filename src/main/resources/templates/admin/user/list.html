@@ -1,0 +1,32 @@
+<main class="createMeme" style="padding:150px 0px 50px 0px">
+    <div class="container body-content">
+        <div class="well">
+            <h2 align="center">All Users</h2>
+            <div class="row">
+                <table class="table table-hover " style="background-color: #3cb0fd; border-radius: 25px; ">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <th:block th:each="user : ${users}">
+                            <tr th:style="${user.isAdmin() ? 'color: darkblue; font-weight: bold' : ''}">
+                                <td th:text="${user.id}"></td>
+                                <td th:text="${user.fullName}"></td>
+                                <td th:text="${user.email}"></td>
+                                <td>
+                                    <a style="color: black; font-weight: bold" th:href="@{/admin/users/edit/{id}(id=${user.id})}">Edit</a>
+                                    <a style="color: #dc3545; font-weight: bold" th:href="@{/admin/users/delete/{id}(id=${user.id})}">Delete</a>
+                                </td>
+                            </tr>
+                        </th:block>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

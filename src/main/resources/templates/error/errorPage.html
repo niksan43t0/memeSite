@@ -1,0 +1,24 @@
+<main class="createMeme" style="padding:150px 0px 50px 0px">
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="alert alert-dismissible alert-danger" th:if="${errorMessage=='access'}">
+                    <h2>Access Denied!</h2>
+                    <h4>You need to <a th:href="@{/logout}" class="alert-link">login</a> with different user.</h4>
+                </div>
+                <div class="alert alert-dismissible alert-danger" th:if="${errorMessage=='404'}">
+                    <h2>Error 404!</h2>
+                    <h4>Page doesn't exist.</h4>
+                </div>
+                <div class="alert alert-dismissible alert-danger" th:if="${errorMessage=='email'}">
+                    <h2>Wrong email!</h2>
+                    <h4>This email is used for another account.</h4>
+                </div>
+                <div class="alert alert-dismissible alert-danger" th:if="${errorMessage=='passwordMatch'}">
+                    <h2>Wrong password!</h2>
+                    <h4>Your passwords didn't match.</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,23 @@
+<main class="profile"  xmlns:th="http://www.w3.org/1999/xhtml">
+    <div class="container body-content span=8 offset=2" style="padding:200px 0px 50px 0px" >
+        <div class="well">
+            <form>
+                <fieldset style="text-align: center;">
+                    <legend>Profile</legend>
+                    <br/>
+                    <button class="btn-primary" style="font-weight: 700; border: none; border-radius: 300px; font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;"  disabled="disabled" th:text="${user.email}"></button>
+                    <img style="width: 100%" th:src="@{'data:image/*;base64,' + ${user.getEncodedPicture()}}" />
+                    <h1 th:text="${user.fullName}"></h1>
+                    <th:block th:each="role : ${roles}">
+                        <td th:if="${user.roles.contains(role)} == true" th:text="${role.getSimpleName()}"></td>
+                        <br/>
+                    </th:block>
+                    <div>
+                        <a class="btn btn-success btn-xs" th:href="@{/profile/edit}">Edit</a>
+                        <a class="btn btn-danger btn-xs" th:href="@{/profile/delete}">Delete</a>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

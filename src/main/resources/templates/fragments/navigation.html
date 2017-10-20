@@ -1,0 +1,71 @@
+
+
+    <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <a class="navbar-brand" th:href="@{/#page-top}">Quality memes</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/#memes}">Memes</a>
+                </li>
+
+                <li  class="dropdown nav-item" th:if="${showCategories}" >
+                    <a class="nav-link" href="#"  data-toggle="dropdown" role="button" aria-expanded="false" >CATEGORIES&#x25BF;<span class="caret"></span></a>
+                    <ul  class="dropdown-menu" role="menu">
+                        <th:block  th:each="category : ${categories}">
+                            <li class="nav-item">
+                                <a class="nav-link" th:text="${category.name + ' (' + #sets.size(category.activeMemes) + ')'}"
+                                   th:href="@{/{id}(id=${category.id})}"></a>
+                            </li>
+                        </th:block>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/#about}">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" th:href="@{/#services}">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="cursor: pointer" onclick="openPublicChat();" >Public Chat</a>
+                </li>
+                <li class="nav-item" th:if="${showCategories}">
+                    <a class="nav-link">
+                        <form id="searchForm" method="POST" autocomplete="off" class="form-row" >
+                            <input type="text" id="searchInput"/>
+                            <label id="searchLabel" onclick="searchMemes()" for="searchInput">Search</label>
+                        </form>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="dropdown nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link" href="#"  data-toggle="dropdown" role="button" aria-expanded="false">ADMIN&#x25BF;<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu" >
+                        <li><a class="nav-link" th:href="@{/admin/categories/}">Categories</a></li>
+                        <li><a class="nav-link" th:href="@{/admin/users/}">Users</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/meme/create}">Create Meme</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/profile}">My Profile</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link"  th:href="@{/register}">Register</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="nav-link" th:href="@{/login}">Login</a>
+                </li>
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link" th:href="@{/logout}">Logout</a>
+                </li>
+            </ul>
+        </div>
+        <link rel="stylesheet" href="/../css/style.css" />
+        <script src="/scripts/publicChatOpen.js"></script>
+        <script th:src="@{/scripts/fuse.js}"></script>
+    </nav>

@@ -1,0 +1,39 @@
+<main class="createMeme" style="padding:150px 0px 50px 0px">
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" th:action="@{/meme/delete/{id}(id=${meme.id})}" method="POST">
+                <fieldset>
+                    <legend align="center">Delete Post</legend>
+                    <br/>
+                    <div class="form-group">
+                        <label class="form-control-label" for="meme_title">Post Title</label>
+                        <div>
+                            <input type="text" class="form-control" id="meme_title" disabled = "disabled"
+                                   name="title" th:value="${meme.title}"/>
+                        </div>
+                    </div>
+                    <div align="center">
+                        <label class="form-control-label" for="meme_image">Image</label>
+                        <div>
+                            <img id="meme_image" align="center" style="width: 1100px" th:src="@{'/img/memeImages/' + ${meme.id} + '.jpg'}"/>
+                        </div>
+                    </div>
+                    <!--<div class="form-group">
+                        <label class="col-sm-4 control-label" for="meme_content">Content</label>
+                        <div class="col-sm-6">
+                            <textarea class="form-control" rows="6" id="meme_content"  disabled = "disabled"
+                                      name="content" th:field="${meme.content}"></textarea>
+                        </div>
+                    </div>-->
+                    <br/>
+                    <div align="center">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" th:href="@{/meme/{id}(id = ${meme.id})}">Cancel</a>
+                            <input type="submit" class="btn btn-danger" value="Delete"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

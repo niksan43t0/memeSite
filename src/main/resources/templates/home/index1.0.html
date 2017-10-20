@@ -1,0 +1,12 @@
+<script th:src="@{/scripts/fuse.js}"></script>
+<script th:src="@{/scripts/search.js}"></script>
+
+<main xmlns:th="http://www.w3.org/1999/xhtml">
+    <!--<div id="status">0 | 0</div>-->
+    <input id="searchField" style="width: 10%; position: fixed; left: 40%; margin-left: -37.5%;"  placeholder="Search memes"/>
+    <input onclick="search()" style="position: fixed; left: 50%; margin-left: -37.5%; width: 0; height: 0;
+            border-style: solid; border-width: 14px 0 10px 20px; border-color: transparent transparent transparent #358ff0;" type="submit"/>
+    <div id="container" class="container" align="center">
+
+    </div>
+</main>

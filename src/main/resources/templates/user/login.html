@@ -1,0 +1,32 @@
+<script th:src="@{/scripts/registerImage.js}"></script>
+<main class="login" xmlns:th="http://www.w3.org/1999/xhtml" style="padding:200px 0px 50px 0px">
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-control::-ms-expand" th:action="@{/login}" method="post">
+                <fieldset>
+                    <legend align="center">Login</legend>
+                    <br/>
+                    <div class="form-group">
+                        <label class="form-control-label" for="user_email">Email</label>
+                        <div >
+                            <input class="form-control" type="email" id="user_email" placeholder="Email" name="email"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="password">Password</label>
+                        <div >
+                            <input class="form-control" type="password" id="password" placeholder="Password" name="password"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div align="center">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" th:href="@{/}">Cancel</a>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

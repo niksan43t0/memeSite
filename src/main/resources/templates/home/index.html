@@ -1,0 +1,24 @@
+<script src="/scripts/masonry.js"></script>
+<script th:src="@{/scripts/infinite-scroll_searchBar.js}"></script>
+<script th:src="@{/scripts/fuse.js}"></script>
+<script th:src="@{/scripts/search.js}"></script>
+
+<main xmlns:th="http://www.w3.org/1999/xhtml" >
+    <!--<div id="status">0 | 0</div>-->
+
+    <header class="masthead" >
+        <div class="header-content" >
+            <div class="header-content-inner">
+                <h1 id="categoryHeading" th:text="'Category: ' + ${category.name}" th:if="${category!=null}"></h1>
+                <h1 id="tagHeading" th:text="'Tag: ' + ${tag.name}" th:if="${tag!=null}"></h1>
+                <hr />
+                <p>Is this your favourite?</p>
+                <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+            </div>
+        </div>
+    </header>
+    <div class="grid" id = "memeDivContainer2" style="padding-top: 50px;margin: 0 auto;" >
+        <div class="grid-sizer"></div>
+
+    </div>
+</main>

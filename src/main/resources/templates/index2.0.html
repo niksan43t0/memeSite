@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <head th:include="fragments/head" ></head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <navigation th:include="fragments/navigation"></navigation>
+
+    <header class="masthead" id="header">
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1 id="homeHeading">Your Favorite Source <br/> of Quality Memes</h1>
+          <hr />
+          <p>This is a good-looking text so you like it when you're reading it</p>
+          <a class="btn btn-primary btn-xl" href="#memes">Start Meme-ing</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light" />
+            <p class="text-faded">Meme Heaven has everything you need to get your old life up and running again in no time! All of the memes on Meme Heaven are open source, free to download, and easy to use.
+              <br/> No strings attached!</p>
+            <a class="btn btn-default btn-xl sr-button" href="#memes">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">At Your Service</h2>
+            <hr class="primary" />
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+              <h3>Quality Memes</h3>
+              <p class="text-muted">Our memes are updated regularly so they don't get boring.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+              <h3>Ready to Ship</h3>
+              <p class="text-muted">You can use all memes as they are, or you can make new ones!</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+              <h3>Up to Date</h3>
+              <p class="text-muted">We update our website to keep things fresh.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+              <h3>Made with Love</h3>
+              <p class="text-muted">You have to make your memes with love these days!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="grid" id = "memes" style="margin: 0 auto;" >
+      <div class="grid-sizer"></div>
+
+    </div>
+
+    <span th:include="fragments/scripts-bundle"></span>
+    <script src="/scripts/masonry.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+    <script src="/scripts/infinite-scroll_searchBar.js"></script>
+    <script src="/scripts/jquery-2.2.4.min.js"></script>
+
+  </body>
+
+</html>

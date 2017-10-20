@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+  <head th:include="fragments/head" ></head>
+
+  <body id="page-top">
+
+    <!-- Navigation -->
+    <navigation th:include="fragments/navigation"></navigation>
+
+    <header class="masthead" id="header">
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1 id="homeHeading">Your Favorite Source <br/> of Quality Memes</h1>
+          <hr />
+          <p>This is a good-looking text so you like it when you're reading it</p>
+          <a class="btn btn-primary btn-xl" href="#memes">Start Meme-ing</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="bg-primary" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading text-white">We've got what you need!</h2>
+            <hr class="light" />
+            <p class="text-faded">Meme Heaven has everything you need to get your old life up and running again in no time! All of the memes on Meme Heaven are open source, free to download, and easy to use.
+              <br/> No strings attached!</p>
+            <a class="btn btn-default btn-xl sr-button" href="#memes">Get Started!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">At Your Service</h2>
+            <hr class="primary" />
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-diamond text-primary sr-icons"></i>
+              <h3>Quality Memes</h3>
+              <p class="text-muted">Our memes are updated regularly so they don't get boring.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-paper-plane text-primary sr-icons"></i>
+              <h3>Ready to Ship</h3>
+              <p class="text-muted">You can use all memes as they are, or you can make new ones!</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-newspaper-o text-primary sr-icons"></i>
+              <h3>Up to Date</h3>
+              <p class="text-muted">We update our website to keep things fresh.</p>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 text-center">
+            <div class="service-box">
+              <i class="fa fa-4x fa-heart text-primary sr-icons"></i>
+              <h3>Made with Love</h3>
+              <p class="text-muted">You have to make your memes with love these days!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--original gallery
+    <section id="memes" class="p-0" >
+      <div class="container-fluid">
+        <div class="row no-gutter" id="memeDivContainer">  &lt;!&ndash; popup-gallery class to show image in same window&ndash;&gt;
+          <div class="col-lg-4 col-sm-6">
+            <a class="portfolio-box" href="/img/portfolio/fullsize/6.jpg">
+              <img class="img-fluid" src="/img/portfolio/thumbnails/6.jpg" alt="" />
+              <div class="portfolio-box-caption">
+                <div class="portfolio-box-caption-content">
+                  <div class="project-category text-faded">
+                    Category
+                  </div>
+                  <div class="project-name">
+                    Project Name
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <div class="grid" id = "memes" style="margin: 0 auto;" >
+      <div class="grid-sizer"></div>
+
+    </div>
+
+    <!--footer
+    <div class="call-to-action bg-dark">
+      <div class="container text-center">
+        <h2>Free Download at Start Bootstrap!</h2>
+        <a class="btn btn-default btn-xl sr-button" href="http://startbootstrap.com/template-overviews/creative/">Download Now!</a>
+      </div>
+    </div>
+    <section id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mx-auto text-center">
+            <h2 class="section-heading">Let's Get In Touch!</h2>
+            <hr class="primary" />
+            <p>Reached the bottom of the page? That's great! Give us a call or send us an email and we will send you new memes for the rest of your life!</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-4 ml-auto text-center">
+            <i class="fa fa-phone fa-3x sr-contact"></i>
+            <p>123-456-6789</p>
+          </div>
+          <div class="col-lg-4 mr-auto text-center">
+            <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+            <p>
+              <a href="mailto:your-email@your-domain.com">feedback@startbootstrap.com</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>-->
+
+    <span th:include="fragments/scripts-bundle"></span>
+    <script src="/scripts/masonry.js"></script>
+    <script src="/scripts/infinite-scroll_searchBar.js"></script>
+    <script src="/scripts/jquery-2.2.4.min.js"></script>
+
+  </body>
+
+</html>

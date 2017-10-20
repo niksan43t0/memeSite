@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Public Chat - Meme Heaven</title>
+    <link href="/vendor/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+    <script src="/scripts/jquery-2.2.4.min.js"></script>
+    <script src="/webjars/sockjs-client/sockjs.min.js"></script>
+    <script src="/webjars/stomp-websocket/stomp.min.js"></script>
+    <script src="/scripts/publicChat.js"></script>
+</head>
+<body>
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being
+    enabled. Please enable
+    Javascript and reload this page!</h2></noscript>
+<div id="main-content" class="container">
+    <div class="well" sec:authorize="isAuthenticated()">
+        <div>
+            <form class="form-control::-ms-expand" style="text-align: center;">
+                <fieldset >
+                    <div class="form-group" >
+                        <div>
+                            <div id="dataCarrier" th:attr="data-userId=${userId}" ></div>
+                            <label for="message">Wanna send a message?</label>
+                            <input type="text" id="message" class="form-control" placeholder="Your message here..." autocomplete="off"/>
+                        </div>
+                        <button id="send" class="btn btn-default" style="float: right;" type="submit">Send</button>
+                    </div>
+
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table id="conversation" class="table table-striped header-fixed">
+                <thead>
+                <tr>
+                    <th>Messages</th>
+                </tr>
+                </thead>
+                <tbody id="messages">
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

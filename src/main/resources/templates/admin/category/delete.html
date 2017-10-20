@@ -1,0 +1,26 @@
+<main class="createMeme" style="padding:150px 0px 50px 0px">
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" th:action="@{/admin/categories/delete/{id}(id=${category.id})}" method="POST">
+                <fieldset>
+                    <legend align="center">Delete Category</legend>
+                    <br/>
+                    <div class="form-group">
+                        <label class="form-control-label" for="category_name">Category Name</label>
+                        <div>
+                            <input type="text" class="form-control" id="category_name" placeholder="Category Name"
+                                   name="name" th:value="${category.name}" disabled = "disabled"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div align="center">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" th:href="@{/admin/categories/}">Cancel</a>
+                            <input type="submit" style="cursor: pointer" class="btn btn-danger" value="Delete"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

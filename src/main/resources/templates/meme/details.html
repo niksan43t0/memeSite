@@ -1,0 +1,39 @@
+<script src="/scripts/likeMeme.js"></script>
+<script src="/scripts/memeComments.js"></script>
+<link rel="stylesheet" href="/../css/style.css" />
+<main class="memeDetails" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+    <div class="container body-content" style="padding:150px 0px 30px 0px">
+        <div class="row">
+            <div class="col-md-12">
+                <meme>
+                    <header style="text-align: center">
+                        <h2>
+                            <span th:text="${meme.title}" ></span>
+                            <div sec:authorize = "isAuthenticated()" th:if="${user.isAdmin() OR user.isAuthor(meme)}">
+                                <a class="btn btn-success btn-xs" th:href="@{/meme/edit/{id}(id = ${meme.id})}">Edit</a>
+                                <a class="btn btn-danger btn-xs" th:href="@{/meme/delete/{id}(id = ${meme.id})}">Delete</a>
+                            </div>
+                        </h2>
+                        <img style="width: 70%; height: 50%;" th:src="@{'/img/memeImages/' + ${meme.id} + '.jpg'}"/>
+                        <br/> <br/>
+                        <p align="centered">
+                            <a class="btn btn-default btn-xs" th:each="tag:${meme.tags}" th:if="${tag.name!=''}" th:href="@{/tag/{name}(name=${tag.name})}" th:text="${tag.name}"></a>
+                        </p>
+                        <input id="likeMeme" sec:authorize = "isAuthenticated()" class="btn btn-success btn-xs pull-left" style="cursor: pointer;"
+                        th:onclick="${'likeMeme(' + meme.id + ');'}" type="button" th:value="${'Like (' + meme.getUserLikes().size()} + ')'"/>
+                        <p style="text-align: right" th:text="${'by ' + meme.author.fullName}"></p>
+                    </header>
+                    <form id="postCommentForm" method="POST" sec:authorize = "isAuthenticated()">
+                        <div>
+                            <textarea class="form-control" rows="3" name='content' id='commentTextArea' style="resize:none;" required = "required" ></textarea>
+                        </div>
+                        <button class="btn btn-light btn-xs pull-right" type='submit' >Comment</button>
+                        <br/><br/>
+                    </form>
+                    <div id="commentSection" style="display: none">
+                    </div>
+                </meme>
+            </div>
+        </div>
+    </div>
+</main>

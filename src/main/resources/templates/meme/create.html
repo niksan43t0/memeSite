@@ -1,0 +1,60 @@
+<script th:src="@{/scripts/registerImage.js}"></script>
+<main class="createMeme" xmlns:th="http://www.w3.org/1999/xhtml" style="padding:150px 0px 50px 0px">
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-control::-ms-expand" th:action="@{/meme/create}" method="POST" enctype="multipart/form-data">
+                <fieldset>
+                    <legend align="center">New Post</legend>
+                    <br/>
+                    <div class="form-group">
+                        <label class="form-control-label" for="meme_title">Meme Title</label>
+                        <div>
+                            <input type="text" class="form-control" id="meme_title" placeholder="Meme Title"
+                                   name="title" required = "required"/>
+                        </div>
+                    </div>
+                    <!--<div class="form-group" style="width:700px;">
+                        <label class="form-control-label" for="meme_content">Content</label>
+                        <div>
+                            <textarea class="form-control"  rows="10" id="meme_content"
+                                      name="content" placeholder="Meme Content" style="resize:none;" required = "required"></textarea>
+                        </div>
+                    </div>-->
+                    <div class="form-group">
+                        <label class="form-control-label" for="meme_image">Meme image</label>
+                        <div>
+                            <input  type="file" accept="image/*" onchange="readURL(this);"
+                                    id="meme_image" name="memeImage" required="required"/> <br/>
+                        </div>
+                    </div>
+                    <div class="form-group" align="center">
+                        <div>
+                            <img style="width: 100%;" align="center" id="blah" src="#" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="meme_category">Category</label>
+                        <div>
+                            <select class="form-control" id="meme_category" name="categoryId">
+                                <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-control-label" for="meme_tags">Tags</label>
+                        <div>
+                            <input type="text" class="form-control" id="meme_tags" placeholder="Tags" name="tagString"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div align="center">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <a class="btn btn-default" th:href="@{/}">Cancel</a>
+                            <input type="submit" class="btn btn-primary" value="Submit"/>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</main>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" style="height: 100%">
+
+<head th:include="fragments/head" ></head>
+
+<body id="page-top" style="height: 100%">
+
+
+    <!-- Navigation -->
+    <header th:include="fragments/navigation"></header>
+
+    <span th:include="fragments/scripts-bundle"></span>
+
+    <main th:include="${view}"  style="height: 100%"></main>
+
+
+
+</body>
+</html>
